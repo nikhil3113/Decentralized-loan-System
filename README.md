@@ -10,4 +10,4 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-##Replace the contract Address and Abi in app.js
+## Replace the contract Address and Abi in app.js
