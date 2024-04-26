@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan System</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link your custom CSS file if needed -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-5xl font-semibold mb-8 text-center">Loan System</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-md shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Create Loan</h2>
+                <form id="loanForm" class="space-y-4">
+                    <div>
+                        <label for="amount" class="block">Amount:</label>
+                        <input type="number" step="any" id="amount" name="amount" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" >
+                    </div>
+                    <div>
+                        <label for="repayDate" class="block">Repay Date:</label>
+                        <input type="date" id="repayDate" name="repayDate" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="interest" class="block">Interest:</label>
+                        <input type="number" id="interest" name="interest" min="1" max="15" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200">Create Loan</button>
+                </form>
+            </div>
+            <div class="bg-white p-6 rounded-md shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Get Loan Details</h2>
+                <form id="loanDetails" class="space-y-4">
+                    <div>
+                        <label for="randomId" class="block">Enter Id:</label>
+                        <input type="number" id="randomId" name="randomId" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200">Get Loan Details</button>
+                </form>
+                <div id="loanList" class="mt-8 bg-white p-6 rounded-md shadow-md">
+                    <h2 class="text-xl font-semibold mb-4">Loan Details</h2>
+                    <div id="loanDetailsContainer">
+                        <!-- Loan details will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="payLoanForm" class="bg-white p-6 rounded-md shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Pay Loan</h2>
+            <label for="payRandomId">Enter Loan ID:</label>
+            <input type="text" id="payRandomId" name="payRandomId" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200">Pay Loan</button>
+        </form>
+        
+    </div>
+
+    <!-- Include Web3 and your JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
